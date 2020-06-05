@@ -1,4 +1,5 @@
-# paste-microcode.py, generates microcode for the CU which can be pasted into circuitverse.
+# paste-microcode.py
+# generates microcode for the CU which can be pasted into circuitverse.
 
 
 
