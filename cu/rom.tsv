@@ -1,5 +1,3 @@
-# pixy's CU uses a 128x16b ROM to store microcode.
-
 N	N	N	N	S	S	S	AR	BR	XW	YR	YW	ALW	IPW	ARR	IRR	RR	RW	IMW	B	ALI	ALI	ALI	CODE
 0	0	0	0	0	0	0	0	0	0	0	0	0	1	1	0	0	0	0	0	0	0	0	add <x>, <y>
 0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	1	0	1	0	0	0	0	0	 
