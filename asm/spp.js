@@ -1,19 +1,29 @@
-# spp.py, a simulated pixy processor to run pixy binaries.
+// spp.js, a simulated pixy processor to run pixy binaries.
 
 
 
-class ram: pass
+class ram 
+{
+  
+}
   
   
 
-class latch:
-  def __init__(self): self.value = 0x0000
-  def write(self, value): self.value = value
-  def read(self): return self.value
-  
-  
+class latch
+{
+  this.value = 0x0000
+  this.write = (v => this.value = v).bind(this)
+  this.read = (() => this.value).bind(this)
+}
 
-class pixy:
+
+
+function pixy(ticks)
+{
+  this.pc = latch()
+  this.ir = latch()
+  this.ur = []
+}
   
   def __init__(self, ticks):
     self.registers = []
@@ -28,6 +38,6 @@ class pixy:
 
   
 
-# notes:
-# circuitverse has a maxium RAM size of 1Mx32b which is a 4MB python array.
-# stdout is memory-mapped at address 0x0000.
+// notes:
+// circuitverse has a maxium RAM size of 1Mx32b which is a 4MB python array.
+// stdout is memory-mapped at address 0x0000.
