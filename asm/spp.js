@@ -2,8 +2,16 @@
 
 
 
-const ram = size => new Int8Array(1 << size)
+function ram(size) {
+  this.data = new Int8Array(1 << size)
+  this.ports = {}
+}
 
+
+
+ram.prototype.port = (at, fun) => this.ports[at] = fun
+ram.prototype.write = (at, value) => (this.ports[at] || () => this.data[at] = value).bind(this)()
+ram.prototype.read = (at) => (this.ports[at] || () => this.data[at]).bind(this)()
 
 
 function cell() {
@@ -27,6 +35,10 @@ function pixy() {
 pixy.prototype.tick = () => {
   for (let e of this.events) e.bind(this)();
 }
+
+
+
+pixy.prototype.add = event => this.events.push(event)
 
 
 
