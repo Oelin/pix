@@ -1,5 +1,4 @@
-# paste-microcode.py
-# generates microcode for the CU which can be pasted into circuitverse.
+# paste-rom.py, creates a ROM for the CU that can be pasted into a circuit. 
 
 
 
@@ -9,12 +8,12 @@ raw = '{"layout":{"width":100,"height":40,"title_x":50,"title_y":13,"titleEnable
 
 
 
-# pixy microcode, 128 rows.
+# insert pixy microcode.
 
 code = [768, 160, 40960, 18432, 5120, 0, 0, 0, 768, 160, 32784, 18432, 5122, 0, 0, 0, 768, 160, 40960, 18432, 5121, 0, 0, 0, 768, 160, 32784, 18432, 5121, 0, 0, 0, 768, 160, 40960, 18432, 5122, 0, 0, 0, 768, 160, 40960, 18432, 5123, 0, 0, 0, 768, 160, 40960, 18432, 5124, 0, 0, 0, 34816, 160, 0, 5125, 0, 0, 0, 0, 768, 160, 8448, 8, 0, 0, 0, 0, 768, 160, 12288, 0, 0, 0, 0, 0, 768, 160, 4112, 0, 0, 0, 0, 0, 768, 160, 272, 4128, 0, 0, 0, 0, 768, 160, 2304, 8256, 0, 0, 0, 0, 768, 160, 272, 8256, 0, 0, 0, 0, 768, 160, 40960, 18432, 1025, 0, 0, 0, 768, 160, 32784, 18432, 5126, 0, 0, 0]
+result = raw.replace('<microcode>', str(code))
 
 
 
-final = raw.replace('<microcode>', str(code).replace(', ', ','))
-print('[+] paste the following data into a circuit\n')
-print(final)
+print(f'[+] paste the following data into a circuit\n\n{result}')
+
