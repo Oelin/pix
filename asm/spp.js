@@ -2,35 +2,30 @@
 
 
 
-class ram 
-{
-  
-}
-  
+const ram = size => new Int8Array(1 << size)
 
 
-class latch
-{
+
+function cell() {
   this.value = 0x0000
-  this.write = (v => this.value = v).bind(this)
-  this.read = (() => this.value).bind(this)
 }
 
 
 
-function pixy(ticks)
-{
-  this.pc = latch()
-  this.ir = latch()
-  this.ur = [0,0,0,0,0].map(latch)
+cell.prototype.w = v => this.value = v
+cell.prototype.r = () => this.value
+
+
+
+function pixy() {
+  this.cells = [0,0,0,0,0,0,0,0].map(cell)
   this.events = []
 }
 
 
 
-pixy.prototype.tick = function()
-{
-  
+pixy.prototype.tick = () => {
+  for (let e of this.events) e.bind(this)();
 }
 
 
