@@ -34,4 +34,8 @@ Pixy microcode has access to 16 control signals. `in` means to read data and `ou
 | ALS (3 bits) | ALU select operation      |
 
 #### FN
-The `FN` signal fires when no other signals are on. It asserts that an instruction has finished executing and tells the program counter to progress.
+The `FN` signal fires when no other signals are active. It asserts that an instruction has finished executing and tells the program counter to progress.
+
+### Resources
+* `rom.csv` contains the microcode for each CPU instruction. Apart from `FN`, rows with no active signals are excluded.
+* `paste-rom.py` is a script which creates a CircuitVerse ROM to store pixy microcode.
