@@ -7,7 +7,7 @@ class ram
   
 }
   
-  
+
 
 class latch
 {
@@ -22,21 +22,18 @@ function pixy(ticks)
 {
   this.pc = latch()
   this.ir = latch()
-  this.ur = []
+  this.ur = [0,0,0,0,0].map(latch)
+  this.events = []
 }
-  
-  def __init__(self, ticks):
-    self.registers = []
-    self.p = 1 / ticks
-  
-  def pc(self): return self.registers[-1]
-    
-  def tick():
-    pass
-  
-  def
 
+
+
+pixy.prototype.tick = function()
+{
   
+}
+
+
 
 // notes:
 // circuitverse has a maxium RAM size of 1Mx32b which is a 4MB python array.
