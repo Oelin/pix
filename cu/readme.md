@@ -32,3 +32,6 @@ Pixy microcode has access to 16 control signals. `in` means to read data and `ou
 | IMO          | immediate out             |
 | B            | program counter branch    |
 | ALS (3 bits) | ALU select operation      |
+
+#### FN
+The `FN` signal fires when no other signals are on. It asserts that an instruction has finished executing and tells the program counter to progress.
