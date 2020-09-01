@@ -20,7 +20,7 @@ Pixy microcode has access to 16 control signals. `in` means to read data and `ou
 |--------------|-------------------------------|
 | XI           | ALU X register in             |
 | YI           | ALU Y register in             |
-| AO           | source register in            |
+| AO           | source register out           |
 | BI           | destination register in       |
 | BO           | destination regiseter out     |
 | ALO          | ALU out                       |
