@@ -16,22 +16,22 @@ The microcode for each instruction is stored on a ROM. The CU uses an instructio
 ### Signals
 Pixy microcode has access to 16 control signals. `in` means to read data and `out` means to write data.
 
-| Signal       | Meaning                   |
-|--------------|---------------------------|
-| XI           | X register in             |
-| YI           | Y register in             |
-| AO           | source register in        |
-| BI           | destination register in   |
-| BO           | destination regiseter out |
-| ALO          | ALU out                   |
-| PO           | program counter out       |
-| ARI          | address register in       |
-| IRI          | instruction regiser in    |
-| CO           | CPU out                   |
-| CI           | CPU in                    |
-| IMO          | immediate out             |
-| B            | program counter branch    |
-| ALS (3 bits) | ALU select operation      |
+| Signal       | Meaning                       |
+|--------------|-------------------------------|
+| XI           | ALU X register in             |
+| YI           | ALU Y register in             |
+| AO           | source register in            |
+| BI           | destination register in       |
+| BO           | destination regiseter out     |
+| ALO          | ALU out                       |
+| PO           | program counter out           |
+| ARI          | address register in           |
+| IRI          | instruction regiser in        |
+| CO           | CPU out                       |
+| CI           | CPU in                        |
+| IMO          | immediate out                 |
+| B            | program counter branch        |
+| ALS (3 bits) | ALU select operation          |
 
 #### FN
 The `FN` signal fires when no other signals are active. It asserts that an instruction has finished executing and tells the program counter to progress.
