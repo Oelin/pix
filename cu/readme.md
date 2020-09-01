@@ -39,5 +39,5 @@ The `FN` signal fires when no other signals are active. It asserts that an instr
 ---
 
 ### Resources
-* `rom.csv` contains the microcode for each CPU instruction. Apart from `FN`, rows with no active signals are excluded.
+* `rom.csv` contains the microcode for each CPU instruction. Rows with no active signals are excluded apart from the `FN` line.
 * `paste-rom.py` is a script which creates a CircuitVerse ROM to store pixy microcode.
