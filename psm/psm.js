@@ -43,7 +43,6 @@ const names = code =>
 
 
 function sub(code, name, num) {
-	
   return code.replaceAll(`$${name}`, num)
 	.replace(`${name}:`, '')
 }
@@ -53,6 +52,7 @@ function sub(code, name, num) {
 // parser
 
 function *parse(lines) {
+
 }
 
 
