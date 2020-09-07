@@ -5,20 +5,20 @@
 // opcode table
 
 const opcodes = [
-	'add r r',
+  'add r r',
   'add r v',
-	'sub r r',
-	'sub r v',
-	'and r r',
-	'or r r',
-	'xor r r',
-	'not r',
-	'b v',
-	'mov r r',
-	'mov r v',
-	'up r v',
-	'sto v r',
-	'sto r r'
+  'sub r r',
+  'sub r v',
+  'and r r',
+  'or r r',
+  'xor r r',
+  'not r',
+  'b v',
+  'mov r r',
+  'mov r v',
+  'up r v',
+  'sto v r',
+  'sto r r'
 ]
 
 
@@ -34,7 +34,7 @@ const purify = code =>
 
 
 
-const names = code => 
+const names = code =>
   code.split('\n')
   .map(line => line.match(/^(\w+):/))
   .map((match, num) => match && [match[1], num])
@@ -44,14 +44,14 @@ const names = code =>
 
 function sub(code, name, num) {
   return code.replaceAll(`$${name}`, num)
-	.replace(`${name}:`, '')
+  .replace(`${name}:`, '')
 }
 
 
 
 // parser
 
-function *parse(lines) {
+function* parse(lines) {
 
 }
 
@@ -60,7 +60,7 @@ function *parse(lines) {
 // assemble to machine code 
 
 function asm(parsed) {
-	
+
 }
 
 
