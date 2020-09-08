@@ -8,5 +8,5 @@ const note = /#.*/g
 
 function prune(src) {
   return src.replaceAll(white, '')
-  .replaceAll(eolb, ':')
+  .replaceAll(eolb, ':').trim()
 }
