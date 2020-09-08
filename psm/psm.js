@@ -1,12 +1,13 @@
 // psm.js, the pixy assembler
 
 
-const white = /^\s*[\r\n]+/gm
-const eolb = /:[\n\s]+/g
-const note = /#.*/g
+
+const white = /^\s*[\r\n]+|#.*/gm
+const lend = /:[\n\s]+/g
+
 
 
 function prune(src) {
-  return src.replaceAll(white, '')
-  .replaceAll(eolb, ':').trim()
+	return src.replaceAll(white, '')
+	.replaceAll(lend, ':').trim()
 }
