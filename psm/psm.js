@@ -39,8 +39,8 @@ function main(src) {
 
   names(lines).forEach((n, name) =>           
     name && 
-    src = src.replaceAll(`$${name}`, n)
-    .replaceAll(`${name}:`, '')
+    (src = src.replaceAll(`$${name}`, n)
+    .replaceAll(`${name}:`, ''))
   )
 
   // parse src
