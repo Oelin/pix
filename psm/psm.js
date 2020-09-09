@@ -6,13 +6,14 @@ let name = /^([a-zA-Z_][\w_]*):/
 let nend = /:[\n\s]+/g
 
 
-let prune = src => {
+function prune(src) {
   return src.replaceAll(white, '')
   .replaceAll(nend, ':').trim()
 }
 
 
-let names = lines => {
+
+function names(lines) {
   let m
 
   return lines.map(line =>
@@ -20,15 +21,18 @@ let names = lines => {
 }
 
 
-let parse = lines => {
+
+function parse(lines) {
 }
 
 
-let asm = parsed => {
+
+function asm(parsed) {
 }
 
 
-let main = src => {
+
+function main(src) {
   src = prune(src).split('\n')
   names(src)
     
