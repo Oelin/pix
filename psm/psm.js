@@ -38,7 +38,8 @@ function main(src) {
   // replace names 
 
   names(lines).forEach((n, name) =>           
-    name && src = src.replaceAll(`$${name}`, n)
+    name && 
+    src = src.replaceAll(`$${name}`, n)
     .replaceAll(`${name}:`, '')
   )
 
