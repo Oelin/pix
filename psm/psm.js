@@ -32,9 +32,7 @@ let main = src => {
   src = prune(src).split('\n')
   
   names(src).forEach((name, n) =>
-    src = src.replaceAll(`$${name}`, n)
-    .replaceAll(`${name}:`, '')
-  )
+    src = src.replaceAll(`$${name}`, n).replaceAll(`${name}:`, ''))
 
   return src
 }
