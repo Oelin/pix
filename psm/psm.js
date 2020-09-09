@@ -1,4 +1,6 @@
 // psm.js, the pixy assembler
+
+
 let white = /^\s*[\r\n]+|#.*/gm
 let name = /^([a-zA-Z_][\w_]*):/
 let nend = /:[\n\s]+/g
@@ -6,17 +8,15 @@ let nend = /:[\n\s]+/g
 
 function prune(src) {
   return src.replaceAll(white, '')
-    .replaceAll(nend, ':').trim()
+  .replaceAll(nend, ':').trim()
 }
 
 
-function names(src) {
+function names(lines) {
   let m
 
-  return src.map((line, n) =>
-      (m = line.match(name)) && [m[1], n])
-
-    .filter(m => m)
+  return lines.map(line =>
+    (m = line.match(name)) && m[1])
 }
 
 
@@ -33,13 +33,16 @@ function asm(parsed) {
 
 function main(src) {
   src = prune(src)
-
+  let lines = src.split('\n')
+  
   // replace names 
 
-  names(src.split('\n')).forEach(([name, n]) =>
-    src = src.replaceAll(`$${name}`, n)
-    .replaceAll(`${name}:`, '')
-  )
+  names(lines).forEach((n, name) => {
+    
+    if (name)
+      src = src.replaceAll(`$${name}`, n)
+      .replaceAll(`${name}:`, '')
+  })
 
   // parse src
   // assemble parsed
