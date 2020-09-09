@@ -1,9 +1,9 @@
 // psm.js, the pixy assembler
 
 
-const white = /^\s*[\r\n]+|#.*/gm
-const name = /^([a-zA-Z_][\w_]*):/
-const nend = /:[\n\s]+/g
+let white = /^\s*[\r\n]+|#.*/gm
+let name = /^([a-zA-Z_][\w_]*):/
+let nend = /:[\n\s]+/g
 
 
 function prune(src) {
