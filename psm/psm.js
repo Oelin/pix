@@ -37,12 +37,10 @@ function main(src) {
   
   // replace names 
 
-  names(lines).forEach((n, name) => {
-    
-    if (name)
-      src = src.replaceAll(`$${name}`, n)
-      .replaceAll(`${name}:`, '')
-  })
+  names(lines).forEach((n, name) =>           
+    name && src = src.replaceAll(`$${name}`, n)
+    .replaceAll(`${name}:`, '')
+  )
 
   // parse src
   // assemble parsed
