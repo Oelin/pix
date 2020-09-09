@@ -17,7 +17,8 @@ function names(src) {
 
   return src.map(line =>
     (m = line.match(name)) && m[1])
-    .filter(m => m)
+  
+  .filter(m => m)
 }
 
 
