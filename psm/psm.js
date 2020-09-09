@@ -21,21 +21,17 @@ let names = lines => {
 
 
 let parse = lines => {
-  // if 
 }
 
 
 let asm = parsed => {
-  // * given the opcode, rn, rs and val, produce the data for an instruction
-  // * or, given an item of data, convert it to some binary representation.
 }
 
 
 let main = src => {
   src = prune(src).split('\n')
-  names(src)
   
-  .forEach((name, n) =>
+  names(src).forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
     .replaceAll(`${name}:`, '')
   )
