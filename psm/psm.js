@@ -31,12 +31,13 @@ function assem(ast) {
 
 function psm(src) {
   let ast
-  let lines
+  let list
 
   src = prune(src)
-  lines = src.split('\n')
+  list = src.split('\n')
 
-  names(lines).forEach((name, n) =>
+  names(list)
+  .forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
     .replaceAll(`${name}:`, ''))
 
