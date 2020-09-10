@@ -1,18 +1,15 @@
 // psm.js, the pixy assembler
 
 
-
 let white = /^\s*[\r\n]+|#.*/gm
 let name = /^([a-zA-Z_][\w_]*):/
 let nend = /:[\n\s]+/g
-
 
 
 function prune(src) {
   return src.replaceAll(white, '')
     .replaceAll(nend, ':').trim()
 }
-
 
 
 function names(lines) {
@@ -23,10 +20,8 @@ function names(lines) {
 }
 
 
-
 function assem(ast) {
 }
-
 
 
 function psm(src) {
@@ -35,11 +30,13 @@ function psm(src) {
 
   src = prune(src)
   list = src.split('\n')
+  
   names(list)
   
   .forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
-    .replaceAll(`${name}:`, ''))
+    .replaceAll(`${name}:`, '')
+  )
 
   ast = parse(src.split('\n'))
   return assem(ast)
