@@ -36,9 +36,7 @@ function psm(src) {
   src = prune(src)
   lines = src.split('\n')
 
-  names(lines)
-
-  .forEach((name, n) =>
+  names(lines).forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
     .replaceAll(`${name}:`, ''))
 
