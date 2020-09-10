@@ -35,8 +35,8 @@ function psm(src) {
 
   src = prune(src)
   list = src.split('\n')
-
   names(list)
+  
   .forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
     .replaceAll(`${name}:`, ''))
