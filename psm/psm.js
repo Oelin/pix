@@ -35,8 +35,7 @@ function psm(src) {
   
   .forEach((name, n) =>
     src = src.replaceAll(`$${name}`, n)
-    .replaceAll(`${name}:`, '')
-  )
+    .replaceAll(`${name}:`, ''))
 
   ast = parse(src.split('\n'))
   return assem(ast)
