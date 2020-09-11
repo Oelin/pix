@@ -1,4 +1,4 @@
-# update-cu.py, used to update pixy's microcode.
+# ucode.py, used to update pixy's microcode and instruction set.
 
 
 # paste data for an empty ROM.
