@@ -12,7 +12,6 @@ code = [768,160,40960,18432,5122,0,0,0,768,160,32784,18432,5122,0,0,0,768,160,40
 rom = rom.replace('<microcode>', str(code))
 
 
-
 print('[+] paste this into pixy\'s CU:\n')
 print(rom)
 
